@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areas calculadas</title>
+</head>
+<body>
+    <h1>Areas calculadas</h1>
+    <form action="/formu5" method="post">
+        <label for="figura">Seleccione una figura:</label>
+        <select id="figura" name="figura" required>
+            <option value="cuadrado">cuadrado</option>
+            <option value="triangulo">triangulo</option>
+            <option value="circulo">circulo</option>
+            <option value="rectangulo">rectangulo</option>
+        </select><br><br>
+
+        <div id="valores"></div>
+
+        <input type="submit" value="Area calculada">
+    </form>
+
+    {% if area is not none %}
+        <h2>producto:</h2>
+        <p class="producto">El área del {{ figura }} es: {{ area }}</p>
+    {% endif %}
+    {% if Fallo %}
+        <h2 class="error">error: {{ error }}</h2>
+    {% endif %}
+    <script>
+        document.getElementById('figura').addEventListener('change', function() {
+            const figura = this.value;
+            const valoresDiv = document.getElementById('valores');
+            valoresDiv.innerHTML = '';
+            
+            if (figura === 'cuadrado') {valoresDiv.innerHTML = '<label for="lado">Ingrese el lado:</label><input type="number" id="lado" name="lado" required step="0.01">';}
+            else if (figura === 'circulo') {valoresDiv.innerHTML = '<label for="radio">Ingrese el radio:</label><input type="number" id="radio" name="radio" required step="0.01">';}
+            else if (figura === 'triangulo') {valoresDiv.innerHTML = '<label for="base">Ingrese la base:</label><input type="number" id="base" name="base" required step="0.01"><br><br><label for="altura">Ingrese la altura:</label><input type="number" id="altura" name="altura" required step="0.01">';}
+            else if (figura === 'rectangulo') {valoresDiv.innerHTML = '<label for="largo">Ingrese el largo:</label><input type="number" id="largo" name="largo" required step="0.01"><br><br><label for="ancho">Ingrese el ancho:</label><input type="number" id="ancho" name="ancho" required step="0.01">';}
+            
+        });
+    </script> 
+</body>
+</html>

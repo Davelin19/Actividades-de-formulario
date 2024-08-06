@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Convertidor de Calificaciones Numéricas</h1>
+    <form method="post">
+        <label for="grade">Ingrese la calificación (1-20):</label>
+        <input type="number" id="grade" name="grade" min="1" max="20" required>
+        <button type="submit">Convertir</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Resultado: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>

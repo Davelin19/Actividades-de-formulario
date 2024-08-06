@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>triple y Doble de un Número</title>
+</head>
+<body>
+    <h1>Cálcula el Triple y doble del valor numerico</h1>
+    <form action="/formu4" method="POST">
+        <label for="numero">Digite un valor numerico:</label>
+        <input type="number" name="numero" required>
+        <button type="submit">Computar</button>
+    </form>
+    {% if producto %}
+        {% if producto is string %}
+            <div class="Fallo">{{ producto }}</div>
+        {% else %}
+            <div class="producto">El doble de {{ numero }} es {{ producto.doble }}<br>
+            El triple de {{ numero }} es {{ producto.triple }}</div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

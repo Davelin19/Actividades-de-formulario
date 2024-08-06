@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Camisas</title>
+</head>
+<body>
+    <h1>Cálculo de Camisas</h1>
+    <form action="/formu3" method="POST">
+        <label for="resultado1">camisa precio 1:</label>
+        <input type="number" name="resultado1" required>
+        <label for="resultado2">camisa precio 2:</label>
+        <input type="number" name="resultado2" required>
+        <label for="resultado3">camisa precio 3:</label>
+        <input type="number" name="resultado3" required>
+        <label for="resultado4">camisa precio 4:</label>
+        <input type="number" name="resultado4" required>
+        <label for="resultado5">camisa precio 5:</label>
+        <input type="number" name="resultado5" required>
+        <button type="submit">Computar</button>
+    </form>
+    {% if peso is not none %}
+        <div class="resultado">
+            resultado en Peso: {{ peso }}
+        </div>
+    {% endif %}
+</body>
+</html>
